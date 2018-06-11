@@ -4,7 +4,6 @@ terraform {
 
 provider "google" {
   project     = "${var.gcp_project}"
-  region      = "${var.gcp_region}"
 }
 
 resource "google_container_node_pool" "jx-node-pool" {
