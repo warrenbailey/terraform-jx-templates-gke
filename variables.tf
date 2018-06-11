@@ -38,3 +38,13 @@ variable "node_disk_size" {
   description = "Node disk size in GB"
   default = "20"
 }
+
+variable "created_by" {
+  description = "The user that created the cluster"
+  default = "Unknown"
+}
+
+variable "created_timestamp" {
+  description = "The timestamp this cluster was created"
+  default = "Unknown"
+}
