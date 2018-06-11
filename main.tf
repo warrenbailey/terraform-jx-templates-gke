@@ -42,9 +42,11 @@ resource "google_container_cluster" "jx-cluster" {
   initial_node_count = "${var.min_node_count}"
   remove_default_node_pool = "true"
 
-  labels {
-    created-by = "${var.created_by}"
-    created-on = "${var.created_timestamp}"
-    created-with = "terraform"
+  node_config {
+    labels {
+      created-by = "${var.created_by}"
+      created-on = "${var.created_timestamp}"
+      created-with = "terraform"
+    }
   }
 }
