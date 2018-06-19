@@ -64,3 +64,13 @@ variable "created_timestamp" {
   description = "The timestamp this cluster was created"
   default = "Unknown"
 }
+
+variable "monitoring_service" {
+  description = "The monitoring service to use. Can be monitoring.googleapis.com, monitoring.googleapis.com/kubernetes (beta) and none"
+  default = "monitoring.googleapis.com"
+}
+
+variable "logging_service" {
+  description = "The logging service to use. Can be logging.googleapis.com, logging.googleapis.com/kubernetes (beta) and none"
+  default = "logging.googleapis.com"
+}

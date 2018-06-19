@@ -32,20 +32,22 @@ resource "google_container_node_pool" "jx-node-pool" {
   }
 
   management {
-    auto_repair = "${var.auto_repair}"
+    auto_repair  = "${var.auto_repair}"
     auto_upgrade = "${var.auto_upgrade}"
   }
 
 }
 
 resource "google_container_cluster" "jx-cluster" {
-  name               = "${var.cluster_name}"
-  description        = "jx k8s cluster"
-  zone               = "${var.gcp_zone}"
-  enable_kubernetes_alpha = "${var.enable_kubernetes_alpha}"
-  enable_legacy_abac = "${var.enable_legacy_abac}"
-  initial_node_count = "${var.min_node_count}"
+  name                     = "${var.cluster_name}"
+  description              = "jx k8s cluster"
+  zone                     = "${var.gcp_zone}"
+  enable_kubernetes_alpha  = "${var.enable_kubernetes_alpha}"
+  enable_legacy_abac       = "${var.enable_legacy_abac}"
+  initial_node_count       = "${var.min_node_count}"
   remove_default_node_pool = "true"
+  logging_service          = "${var.logging_service}"
+  monitoring_service       = "${var.monitoring_service}"
 
   lifecycle {
     ignore_changes = ["node_pool"]
