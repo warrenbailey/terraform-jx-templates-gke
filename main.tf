@@ -3,6 +3,7 @@ terraform {
 }
 
 provider "google" {
+  version     = "= 1.16.0"
   credentials = "${file("${var.credentials}")}"
   project     = "${var.gcp_project}"
 }
@@ -50,6 +51,6 @@ resource "google_container_cluster" "jx-cluster" {
   monitoring_service       = "${var.monitoring_service}"
 
   lifecycle {
-    ignore_changes = ["node_pool"]
+    ignore_changes = ["node_pool","resource_labels"]
   }
 }
