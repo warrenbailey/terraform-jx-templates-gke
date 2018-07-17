@@ -3,7 +3,7 @@ terraform {
 }
 
 provider "google" {
-  version     = "= 1.16.0"
+  version     = ">= 1.16.1"
   credentials = "${file("${var.credentials}")}"
   project     = "${var.gcp_project}"
 }
