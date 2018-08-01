@@ -50,7 +50,13 @@ resource "google_container_cluster" "jx-cluster" {
   logging_service          = "${var.logging_service}"
   monitoring_service       = "${var.monitoring_service}"
 
+  resource_labels {
+	created-by = "${var.created_by}"
+	created-timestamp = "${var.created_timestamp}"
+	created-with = "terraform"
+  }
+
   lifecycle {
-    ignore_changes = ["node_pool","resource_labels"]
+    ignore_changes = ["node_pool"]
   }
 }
