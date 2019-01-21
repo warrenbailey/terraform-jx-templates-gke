@@ -22,7 +22,7 @@ resource "google_container_node_pool" "jx-node-pool" {
     oauth_scopes = [
       "https://www.googleapis.com/auth/cloud-platform",
       "https://www.googleapis.com/auth/compute",
-      "${var.oauth_devstorage_scope}",
+      "${var.node_devstorage_role}",
       "https://www.googleapis.com/auth/service.management",
       "https://www.googleapis.com/auth/servicecontrol",
       "https://www.googleapis.com/auth/logging.write",
