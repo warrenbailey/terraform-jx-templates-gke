@@ -28,8 +28,8 @@ resource "google_container_node_pool" "jx-node-pool" {
   }
 
   autoscaling {
-	min_node_count = "${var.min_node_count}"
-	max_node_count = "${var.max_node_count}"
+    min_node_count = "${var.min_node_count}"
+    max_node_count = "${var.max_node_count}"
   }
 
   management {
@@ -51,9 +51,9 @@ resource "google_container_cluster" "jx-cluster" {
   monitoring_service       = "${var.monitoring_service}"
 
   resource_labels {
-	created-by = "${var.created_by}"
-	created-timestamp = "${var.created_timestamp}"
-	created-with = "terraform"
+    created-by = "${var.created_by}"
+    created-timestamp = "${var.created_timestamp}"
+    created-with = "terraform"
   }
 
   lifecycle {
