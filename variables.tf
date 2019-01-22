@@ -39,6 +39,11 @@ variable "node_disk_size" {
   default = "20"
 }
 
+variable "node_devstorage_role" {
+  description = "The devstorage oauth role to add to the node pool"
+  default = "https://www.googleapis.com/auth/devstorage.read_only"
+}
+
 variable "enable_kubernetes_alpha" {
   default ="false"
 } 
