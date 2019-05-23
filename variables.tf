@@ -2,6 +2,14 @@ variable "credentials" {
   description = "Path to the GCP service account key"
 }
 
+variable "organisation" {
+  description = "The organisation to use"
+}
+
+variable "provider" {
+  description = "The provider"
+}
+
 variable "gcp_zone" {
   description = "GCP zone, e.g. us-east1-b (which must be in gcp_region)"
 }
